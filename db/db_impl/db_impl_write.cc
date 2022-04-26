@@ -1085,8 +1085,8 @@ WriteBatch* DBImpl::MergeBatch(const WriteThread::WriteGroup& write_group,
 // write thread. Otherwise this must be called holding log_write_mutex_.
 IOStatus DBImpl::WriteToWAL(const WriteBatch& merged_batch,
                             log::Writer* log_writer, uint64_t* log_used,
-                            uint64_t* log_size,
-                            bool with_db_mutex, bool with_log_mutex) {
+                            uint64_t* log_size, bool with_db_mutex,
+                            bool with_log_mutex) {
   assert(log_size != nullptr);
 
   // Assert mutex explicitly.
